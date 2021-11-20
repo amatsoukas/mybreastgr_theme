@@ -26,11 +26,11 @@
               <ul class='c-nav o-plain-list'>
                 {{ navigation }}
                 {{#if @member}}
-                  <li class='c-nav__item'><a href='{{ @site.url }}/account/' class='c-nav__link'>{{t 'Account' }}</a></li>
-                  <li class='c-nav__item'><a href='#signout' class='c-nav__link' data-members-signout>{{t 'Log Out' }}</a></li>
+                  <!-- <li class='c-nav__item'><a href='{{ @site.url }}/account/' class='c-nav__link'>{{t 'Account' }}</a></li>
+                  <li class='c-nav__item'><a href='#signout' class='c-nav__link' data-members-signout>{{t 'Log Out' }}</a></li>-->
                 {{else}}
-                  <li class='c-nav__item'><a href='{{ @site.url }}/signin/'>{{t 'Log In' }}</a></li>
-                  <li class='c-nav__item'><a href='{{ @site.url }}/signup/' class='u-font-weight-medium u-link'>{{t 'Subscribe' }}</a></li>
+                  <!-- <li class='c-nav__item'><a href='{{ @site.url }}/signin/'>{{t 'Log In' }}</a></li> 
+                  <li class='c-nav__item'><a href='{{ @site.url }}/signup/' class='u-font-weight-medium u-link'>{{t 'Subscribe' }}</a></li> -->
                 {{/if}}
                 <li class='c-nav__item'>
                   <a class='toggle-search-button js-search-toggle' href='#' aria-label='{{t "Search" }}'>
