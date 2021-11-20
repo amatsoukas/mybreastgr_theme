@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  Trumps > Spacing
+\*------------------------------------*/
+
+.u-mt-8 {
+  margin-top: half($base-spacing-unit);
+}
+
+.u-mt-16 {
+  margin-top: $base-spacing-unit;
+}
+
+.u-mb-8 {
+  margin-bottom: half($base-spacing-unit);
+}
+
+.u-mb-16 {
+  margin-bottom: $base-spacing-unit;
+}

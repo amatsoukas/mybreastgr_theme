@@ -1,0 +1,70 @@
+{
+  "name": "nubia",
+  "description": "Responsive & Multipurpose Ghost Theme",
+  "demo": "https://nubia.aspirethemes.com/",
+  "version": "1.5.0",
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@primer/css": "^15.2.0",
+    "clipboard": "^2.0.6",
+    "concat": "^3.0.0",
+    "evil-icons": "^1.10.1",
+    "fs": "0.0.2",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-size": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.12.0",
+    "jshint-stylish": "^2.2.0",
+    "lazysizes": "^5.2.2",
+    "lunr": "^0.7.2",
+    "lunr-languages": "^1.4.0",
+    "primer-tooltips": "^1.5.11",
+    "prismjs": "^1.22.0"
+  },
+  "author": {
+    "name": "Aspire Themes",
+    "email": "aspirethemes@gmail.com",
+    "url": "https://aspirethemes.com/"
+  },
+  "config": {
+    "posts_per_page": 11,
+    "image_sizes": {
+      "xs": {
+        "width": 176
+      },
+      "sm": {
+        "width": 380
+      },
+      "md": {
+        "width": 800
+      },
+      "lg": {
+        "width": 1600
+      }
+    }
+  },
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.0.2",
+    "node-sass": "^4.14.1",
+    "sass": "^1.30.0"
+  }
+}
