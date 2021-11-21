@@ -6,7 +6,7 @@
   text-align: center;
 
   @include mq($from: tablet) {
-    text-align: right;
+    text-align: center;
   }
 
   li {

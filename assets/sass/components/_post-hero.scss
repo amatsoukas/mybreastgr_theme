@@ -7,7 +7,6 @@
     display: block;
     position: relative;
     padding-top: 58%;
-    background-color: $bg-gray;
 
     @include mq($from: desktop) {
       margin-right: - double($base-spacing-unit);
@@ -20,11 +19,10 @@
     position: absolute;
     top: 0;
     object-fit: cover;
-    background-color: $bg-gray;
   }
 
   &__content {
-    background-color: $bg-gray;
+    background-color: #cf437d;
     border-style: solid;
     border-width: 0 1px 1px 1px;
     border-color: $color-border;
@@ -56,6 +54,7 @@
     margin-bottom: 0;
     font-family: $font-serif;
     font-size: $font-size-h3;
+    color: #fff;
 
     @include mq($from: tablet) {
       font-size: $font-size-h2;
@@ -69,7 +68,7 @@
 
   &__meta {
     font-size: $font-size-tiny;
-    color: $color-gray;
+    color: #e5e5e5;
     text-transform: uppercase;
     letter-spacing: $global-letter-spacing;
   }

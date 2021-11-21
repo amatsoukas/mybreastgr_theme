@@ -4,13 +4,8 @@
 
 .c-footer {
   margin-top: double($base-spacing-unit);
-  padding: double($base-spacing-unit) 0 double($base-spacing-unit) 0;
   border-top: half(quarter($base-spacing-unit)) solid $color-footer-top-border;
   background-color: $bg-gray;
-
-  @include mq($from: desktop) {
-    padding: (quadruple($base-spacing-unit) + $base-spacing-unit) 0 $base-spacing-unit 0;
-  }
 
   &__bottom {
     margin-top: $base-spacing-unit;
