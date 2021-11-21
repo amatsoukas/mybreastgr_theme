@@ -22,7 +22,7 @@
   }
 
   &__img {
-    max-height: quadruple($base-spacing-unit);
+    max-height: quadruple($base-spacing-unit) + $base-spacing-unit;
     margin: 0 auto;
 
     @include mq($from: mobile) {
