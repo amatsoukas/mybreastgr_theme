@@ -22,11 +22,15 @@
   }
 
   &__img {
-    max-height: double($base-spacing-unit);
+    max-height: quadruple($base-spacing-unit);
+    margin: 0 auto;
+
+    @include mq($from: mobile) {
+      margin-top: 20px
+    }
 
     @include mq($from: tablet) {
-      margin: 0 auto;
-      max-height: quadruple($base-spacing-unit);
+      max-height: quadruple($base-spacing-unit) + double($base-spacing-unit);
     }
 
     @include mq($from: desktop) {
