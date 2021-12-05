@@ -110,7 +110,7 @@ $(document).ready(function() {
   });
 
   var searchinGhost = new SearchinGhost({
-        key: '940d2da156daba1aea588e0fbe',
+        key: '676f52b422b9ba6726c70ea1f6',
         inputId: ['search-form-input'],
         outputId: ['search-results'],
         searchOn: 'keyup',
