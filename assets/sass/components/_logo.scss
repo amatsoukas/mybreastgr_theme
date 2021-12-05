@@ -22,7 +22,7 @@
   }
 
   &__img {
-    max-height: quadruple($base-spacing-unit) + $base-spacing-unit;
+    max-height: 120px;
     margin: 0 auto;
 
     @include mq($from: mobile) {
@@ -30,11 +30,11 @@
     }
 
     @include mq($from: tablet) {
-      max-height: quadruple($base-spacing-unit) + double($base-spacing-unit);
+      max-height: 120px;
     }
 
     @include mq($from: desktop) {
-      max-height: quadruple($base-spacing-unit) + double($base-spacing-unit);
+      max-height: 120px;
     }
   }
 }

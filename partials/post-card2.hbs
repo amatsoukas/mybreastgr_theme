@@ -1,0 +1,44 @@
+<div class='o-grid__col o-grid__col--initial-grow o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--1-3-l c-post-card-wrap js-post-card-wrap
+  {{#is 'home'}} {{#if @first}} o-grid__col--4-4-m o-grid__col--2-3-l {{/if}} {{/is}}'>
+
+  <div class='c-post-card {{#unless feature_image}} c-post-card--raw {{/unless}} {{#is 'home'}} {{#if @first}} c-post-card--first {{/if}} {{/is}}'>
+    {{#if feature_image}}
+      <div class='c-post-card__media'>
+        <a href='{{ url }}' class='c-post-card__image-wrap' aria-hidden='true' tabindex='-1'>
+          <img
+            alt='{{ title }}'
+            class='c-post-card__image lazyload'
+            data-srcset='
+              {{ img_url feature_image size='sm' }} 380w,
+              {{ img_url feature_image size='md' }} 800w,
+              {{ img_url feature_image size='lg' }} 1600w'
+            sizes='(min-width: 1320px) 768px, (min-width: 1040px) calc(45vw + 183px), calc(98.89vw - 37px)'
+            data-src='{{ img_url feature_image size='lg' }}'
+          >
+          {{#if featured}}
+            <span title='{{t "Featured Post" }}'>
+              <span class='c-post-card--featured__icon' data-icon='ei-star' data-size='s'></span>
+            </span>
+          {{/if}}
+        </a>
+      </div>
+    {{/if}}
+
+    <div class='c-post-card__content'>
+      {{#if tags}}
+        <div class='c-post-card__tags'>
+          {{ tags separator=' / ' limit='1' }}
+        </div>
+      {{/if}}
+
+      
+
+      <h2 class='c-post-card__title'>
+        <a href='{{ url }}' class='c-post-card__title-link'>
+          {{ title }}
+        </a>
+      </h2>
+    </div>
+  </div>
+
+</div>
