@@ -81,13 +81,13 @@ $(document).ready(function() {
       search_results = $('.js-search-results'),
       toggle_search = $('.js-search-toggle'),
       search_result_template = "\
-      <a href={{link}} class='c-search-result'>\
+      <a href=${post.url} class='c-search-result'>\
         <div class='c-search-result__content'>\
-          <h3 class='c-search-result__title'>{{title}}</h3>\
-          <time class='c-search-result__date'>{{pubDate}}</time>\
+          <h3 class='c-search-result__title'>${post.title}</h3>\
+          <time class='c-search-result__date'>${post.published_at}</time>\
         </div>\
         <div class='c-search-result__media'>\
-          <div class='c-search-result__image is-inview' style='background-image: url({{featureImage}})'></div>\
+          <div class='c-search-result__image is-inview' style='background-image: url(${post.feature_image})'></div>\
         </div>\
       </a>";
 
@@ -109,16 +109,63 @@ $(document).ready(function() {
     }
   });
 
-  search_field.ghostHunter({
-    results: search_results,
-    onKeyUp         : true,
-    result_template : search_result_template,
-    zeroResultsInfo : false,
-    displaySearchInfo: false,
-    before: function() {
-      search_results.fadeIn();
-    }
+  var searchinGhost = new SearchinGhost({
+        key: '940d2da156daba1aea588e0fbe',
+        inputId: ['search-form-input'],
+        outputId: ['search-results'],
+        searchOn: 'keyup',
+        onSearchEnd: function() {
+          search_results.fadeIn();
+        },
+        indexOptions: {
+            split: /\s+/,
+            encode: function(str) {
+                var regexp_replacements = {
+                    "a": /[àáâãäå]/g,
+                    "e": /[èéêë]/g,
+                    "i": /[ìíîï]/g,
+                    "o": /[òóôõöő]/g,
+                    "u": /[ùúûüű]/g,
+                    "y": /[ýŷÿ]/g,
+                    "n": /ñ/g,
+                    "c": /[ç]/g,
+                    "s": /ß/g,
+                    " ": /[-/]/g,
+                    "": /['!"#$%&\\()\*+,-./:;<=>?@[\]^_`{|}~]/g,
+                    " ": /\s+/g,
+                }
+                str = str.toLowerCase();
+                for (var key of Object.keys(regexp_replacements)) {
+                    str = str.replace(regexp_replacements[key], key);
+                }
+                return str === " " ? "" : str;
+            }
+        },
+        template: function(post) {
+          return `<a href="${post.url}"" class='c-search-result'>\
+        <div class='c-search-result__content'>\
+          <h3 class='c-search-result__title'>${post.title}</h3>\
+          <time class='c-search-result__date'>${post.published_at}</time>\
+        </div>\
+        <div class='c-search-result__media'>\
+          <div class='c-search-result__image is-inview' style='background-image: url("${post.feature_image}")'></div>\
+        </div>\
+      </a>`;
+        },
+        outputChildsType: false,
+        debug: true
   });
+
+  // search_field.ghostHunter({
+  //   results: search_results,
+  //   onKeyUp         : true,
+  //   result_template : search_result_template,
+  //   zeroResultsInfo : false,
+  //   displaySearchInfo: false,
+  //   before: function() {
+  //     search_results.fadeIn();
+  //   }
+  // });
 
   // =====================
   // Ajax Load More
