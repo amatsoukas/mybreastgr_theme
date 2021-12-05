@@ -5,6 +5,28 @@ $(document).ready(function() {
   // =====================
   // Koenig Gallery
   // =====================
+
+  replaceAccented();
+
+  function replaceAccented(){
+  var e = document.getElementsByTagName('*'), l = e.length, i;
+  if( typeof getComputedStyle == "undefined")
+      getComputedStyle = function(e) {return e.currentStyle;};
+  for( i=0; i<l; i++) {
+      if( getComputedStyle(e[i]).textTransform == "uppercase") {
+          // do stuff with e[i] here.
+          e[i].innerHTML = greekReplaceAccented(e[i].innerHTML);
+      }
+    }
+  }
+  
+  function greekReplaceAccented(str) {
+      var charList = {'Ά':'Α','ά':'α','Έ':'Ε','έ':'ε','Ή':'Η','ή':'η','Ί':'Ι','ί':'ι','ΐ':'ϊ','Ό':'Ο'
+                                  ,'ό':'ο','Ύ':'Υ','ύ':'υ','ΰ':'ϋ','Ώ':'Ω','ώ':'ω','ς':'Σ' 
+      };
+      return str.replace(/./g, function(c) {return c in charList? charList[c] : c}) ;
+  }
+
   var gallery_images = document.querySelectorAll('.kg-gallery-image img');
 
   gallery_images.forEach(function (image) {
