@@ -43,8 +43,8 @@
     </div>
     
     <div class='o-wrapper'>
-      <div class='o-grid js-grid' style="max-width: 900px;">
-        <hr class="hr-text" data-content="Σημαντικές Πληροφορίες">
+      <div class='o-grid' style="max-width: 900px;">
+        <hr class="hr-text" data-content="Επιλεγμένα Θέματα">
       </div>
     </div>
     <div class='slider_wrapper'>
@@ -69,7 +69,12 @@
             gutter: 0,
             nav: true,
             mouseDrag: true,
-            controls: false,
+            controls: true,
+            autoplay: true,
+            arrowKeys: true,
+            autoplayButtonOutput: false,
+            autoplayHoverPause: true,
+            controlsText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
             responsive: {
               320: {
                 items: 1,
@@ -87,8 +92,8 @@
     </div>
 
     <div class='o-wrapper'>
-      <div class='o-grid js-grid' style="max-width: 900px;">
-        <hr class="hr-text" data-content="Τελευταία άρθρα">
+      <div class='o-grid' style="max-width: 900px;">
+        <hr class="hr-text" data-content="Τελευταία Άρθρα">
       </div>
     </div>
     {{/is}}

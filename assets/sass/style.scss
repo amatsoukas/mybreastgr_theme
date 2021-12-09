@@ -192,6 +192,23 @@ hr {
 	}
 }
 
+.tns-controls {
+  float: right;
+  margin-right:16px;
+  button {
+    border: none !important;
+    background: none !important;
+  }
+}
+
+.tns-nav {
+  padding-left: 60px !important;
+}
+
+nav {
+  margin-bottom: 10px;
+}
+
 #quotebox {
   background: url("/assets/images/quote_background.png");
   background-size: cover;
